@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss_Motoyasu : MonoBehaviour
 {
+    int test;
     // Start is called before the first frame update
     void Start()
     {
