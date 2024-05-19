@@ -18,7 +18,11 @@ public class Boss_SetAnime : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            attack01.SetTrigger("Trigger_attack01");
+            attack01.SetBool("attack01",true);
+        }
+        if (Input.GetKeyUp(KeyCode.Alpha2))
+        {
+            attack01.SetBool("attack01", false);
         }
 
     }
