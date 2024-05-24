@@ -44,19 +44,16 @@ public class Boss_horming : MonoBehaviour
         {
             // 変数 moveSpeed を乗算した速度でオブジェクトを前方向に移動する
             transform.position = transform.position + transform.forward * speed * Time.deltaTime;
-          
-                // オブジェクトを変数 targetPos の座標方向に向かせる
-                transform.LookAt(targetPos);
-            
-            
+
         }
         else
         {
            　//攻撃した後、再度プレイヤーに角度を合わせる
-            if (!boss_Animator.GetBool("attack01"))
+            if (boss_Animator.GetBool("attack01") == false)
             {
                 // オブジェクトを変数 targetPos の座標方向に向かせる
                 transform.LookAt(targetPos);
+
             }
             //エリア内に入ったら攻撃開始
             boss_Animator.SetTrigger("attack01");
@@ -70,6 +67,8 @@ public class Boss_horming : MonoBehaviour
         else
         {
             speed = moveSpeed;
+            // オブジェクトを変数 targetPos の座標方向に向かせる
+            transform.LookAt(targetPos);
         }
     }
 
