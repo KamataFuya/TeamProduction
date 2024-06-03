@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TestUi : MonoBehaviour
@@ -11,6 +12,8 @@ public class TestUi : MonoBehaviour
     public Slider PlayerHPBack;
     public Slider PlayerHPBar;
     public Slider PlayerSPBar;
+
+    public string SceneName;
 
     void Start()
     {
@@ -30,8 +33,6 @@ public class TestUi : MonoBehaviour
 
     public void Damage(int damage)
     {
-        if (PlayerHP <= 0) return;
-
         if (PlayerHP < 100)
         {
             PlayerHPBack.value = PlayerHP;
@@ -45,6 +46,8 @@ public class TestUi : MonoBehaviour
         if (PlayerHP <= 0)
         {
             PlayerHPBack.value = PlayerHP;
+            SceneManager.LoadScene(SceneName);
+            return;
         }
     }
 }
